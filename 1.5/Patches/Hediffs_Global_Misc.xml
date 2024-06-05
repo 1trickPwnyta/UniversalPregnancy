@@ -24,4 +24,10 @@
 	  <description>The condition of being able to breastfeed a baby. The breasts are actively producing and storing milk. The lactating state begins when a parent gives birth, and continues indefinitely as long as they breastfeed a baby at least once every 10 days.\n\nPeople who are lactating will have a harder time becoming pregnant.</description>
 	</value>
   </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/HediffDef[defName="OvumExtracted"]/description</xpath>
+    <value>
+	  <description>This person recently underwent an ovum extraction procedure. No more ova can be extracted until some time has passed.</description>
+	</value>
+  </Operation>
 </Patch>
