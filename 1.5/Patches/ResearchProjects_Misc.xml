@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ResearchProjectDef[defName="FertilityProcedures"]/description</xpath>
+    <value>
+	  <description>Perform the surgeries necessary to create a test tube embryo from two fertile people, then implant the embryo in a surrogate parent or growth vat. Also, perform sterilization surgeries on men and women.</description>
+	</value>
+  </Operation>
+</Patch>

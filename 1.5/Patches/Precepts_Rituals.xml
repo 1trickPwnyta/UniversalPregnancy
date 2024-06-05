@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/PreceptDef[defName="ChildBirth"]/description</xpath>
+    <value>
+	  <description>Gather to help a pregnant person give birth. A doctor will help deliver a baby. The health of the baby and parent depend on factors including the parent's age, the doctor's medical ability, and how clean and well-equipped the environment is.</description>
+	</value>
+  </Operation>
+</Patch>

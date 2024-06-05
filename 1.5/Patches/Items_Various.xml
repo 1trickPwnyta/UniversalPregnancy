@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="HumanOvum"]/description</xpath>
+    <value>
+	  <description>An extracted, unfertilized human ovum cell stored in a protective capsule. Once fertilized by a person, it becomes an embryo which can then be implanted into a human parent or growth vat.</description>
+	</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="HumanEmbryo"]/description</xpath>
+    <value>
+	  <description>A human embryo which can be implanted in a parent to create a pregnancy.</description>
+	</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="HumanEmbryo"]/thingClass</xpath>
+    <value>
+	  <thingClass>UniversalPregnancy.HumanEmbryo</thingClass>
+	</value>
+  </Operation>
+</Patch>

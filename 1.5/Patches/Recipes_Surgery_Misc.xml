@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/RecipeDef[defName="ExtractOvum"]/genderPrerequisite</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[defName="ExtractOvum"]/description</xpath>
+    <value>
+	  <description>Extract an ovum into a storage capsule. It can then be fertilized by a person, and finally implanted into a parent to start a pregnancy.</description>
+	</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RecipeDef[defName="ImplantEmbryo"]/description</xpath>
+    <value>
+	  <description>Implant an embryo in a surrogate parent to begin a pregnancy.</description>
+	</value>
+  </Operation>
+</Patch>

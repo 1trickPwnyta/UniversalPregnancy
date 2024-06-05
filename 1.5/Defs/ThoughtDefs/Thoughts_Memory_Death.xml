@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<ThoughtDef ParentName="DeathMemoryFamily">
+		<defName>MyBirthFatherDied</defName>
+		<stages>
+		    <li>
+				<label>my birth father {0} died</label>
+				<description>My birth father died. He's gone forever. It's like a hole in my life.</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+		    </li>
+		</stages>
+    </ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>KilledMyBirthFather</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>120</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+		<stages>
+		    <li>
+				<label>killed my birth father</label>
+				<baseOpinionOffset>-80</baseOpinionOffset>
+		    </li>
+		</stages>
+    </ThoughtDef>
+	
+	<ThoughtDef ParentName="LostMemoryFamily">
+		<defName>MyBirthFatherLost</defName>
+		<stages>
+		    <li>
+				<label>my birth father {0} lost</label>
+				<description>My birth father has been lost. I hope he will get back to us someday.</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+		    </li>
+		</stages>
+    </ThoughtDef>
+	
+</Defs>

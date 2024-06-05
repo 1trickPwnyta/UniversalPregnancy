@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/WorkGiverDef[defName="CarryToBreastfeed"]/label</xpath>
+    <value>
+	  <label>carry to breastfeeding parent</label>
+	</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/WorkGiverDef[defName="CarryToBreastfeed"]/verb</xpath>
+    <value>
+	  <verb>get parent to breastfeed</verb>
+	</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/WorkGiverDef[defName="CarryToBreastfeed"]/gerund</xpath>
+    <value>
+	  <gerund>getting parent to breastfeed</gerund>
+	</value>
+  </Operation>
+</Patch>

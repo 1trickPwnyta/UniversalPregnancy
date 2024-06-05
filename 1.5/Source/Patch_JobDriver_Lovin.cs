@@ -14,8 +14,6 @@ namespace UniversalPregnancy
 
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator il)
         {
-            Debug.Log("Entered JobDriver_Lovin transpiler");
-
             bool foundBiotechActive = false;
             bool foundPawns = false;
 
@@ -24,21 +22,20 @@ namespace UniversalPregnancy
                 // Find instruction checking if Biotech is active
                 if (!foundBiotechActive && instruction.opcode == OpCodes.Call && (MethodInfo)instruction.operand == UniversalPregnancyRefs.m_ModsConfig_BiotechActive)
                 {
-                    Debug.Log("Found BiotechActive");
                     foundBiotechActive = true;
                 }
 
-                // Find instruction where we set variable pawn and set it to this.pawn instead
+                // Find instruction where we set variables pawn and pawn2 and set them randomly to this.pawn and this.Partner
                 if (foundBiotechActive && !foundPawns && instruction.opcode == OpCodes.Stloc_3)
                 {
-                    Debug.Log("Set pawn to this.pawn and pawn2 to this.Partner");
                     yield return instruction;
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
                     yield return new CodeInstruction(OpCodes.Ldfld, UniversalPregnancyRefs.f_JobDriver_pawn);
-                    yield return new CodeInstruction(OpCodes.Stloc_2);
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
                     yield return new CodeInstruction(OpCodes.Call, UniversalPregnancyRefs.m_JobDriver_Lovin_Partner);
-                    yield return new CodeInstruction(OpCodes.Stloc_3);
+                    yield return new CodeInstruction(OpCodes.Ldloca_S, 2);
+                    yield return new CodeInstruction(OpCodes.Ldloca_S, 3);
+                    yield return new CodeInstruction(OpCodes.Call, UniversalPregnancyRefs.m_Utility_ShuffleTwo);
                     foundPawns = true;
                     continue;
                 }
