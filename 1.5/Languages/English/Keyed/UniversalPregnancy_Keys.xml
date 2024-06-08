@@ -12,4 +12,8 @@
 	<Father>parent</Father>
 	
 	<UniversalPregnancy_CannotFertilizeOwnOvum>cannot fertilize own ovum</UniversalPregnancy_CannotFertilizeOwnOvum>
+	<UniversalPregnancy_FemaleFertilitySetting>Female fertility age factor</UniversalPregnancy_FemaleFertilitySetting>
+	<UniversalPregnancy_MaleFertilitySetting>Male fertility age factor</UniversalPregnancy_MaleFertilitySetting>
+	<UniversalPregnancy_FemaleFertility>Use vanilla female age factor</UniversalPregnancy_FemaleFertility>
+	<UniversalPregnancy_MaleFertility>Use vanilla male age factor</UniversalPregnancy_MaleFertility>
 </LanguageData>

@@ -8,9 +8,32 @@ namespace UniversalPregnancy
     [HarmonyPatch("AgeFactor")]
     public static class Patch_StatPart_FertilityByGenderAge
     {
-        public static void Postfix(SimpleCurve ___femaleFertilityAgeFactor, Pawn pawn, ref float __result)
+        public static void Postfix(SimpleCurve ___femaleFertilityAgeFactor, SimpleCurve ___maleFertilityAgeFactor, Pawn pawn, ref float __result)
         {
-            __result = ___femaleFertilityAgeFactor.Evaluate(pawn.ageTracker.AgeBiologicalYearsFloat);
+            SimpleCurve curve;
+            if (pawn.gender == Gender.Female)
+            {
+                if (UniversalPregnancySettings.UseFemaleFertilityForFemales)
+                {
+                    curve = ___femaleFertilityAgeFactor;
+                }
+                else
+                {
+                    curve = ___maleFertilityAgeFactor;
+                }
+            }
+            else
+            {
+                if (UniversalPregnancySettings.UseFemaleFertilityForMales)
+                {
+                    curve = ___femaleFertilityAgeFactor;
+                }
+                else
+                {
+                    curve = ___maleFertilityAgeFactor;
+                }
+            }
+            __result = curve.Evaluate(pawn.ageTracker.AgeBiologicalYearsFloat);
 
 #if DEBUG
             __result = 1f;
