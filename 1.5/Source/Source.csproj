@@ -64,6 +64,7 @@
     <Compile Include="Patch_HumanEmbryo.cs" />
     <Compile Include="Patch_PawnComponentsUtility.cs" />
     <Compile Include="Patch_ParentRelationUtility.cs" />
+    <Compile Include="Patch_PawnGenerator.cs" />
     <Compile Include="Patch_PawnRelationsTracker.cs" />
     <Compile Include="Patch_PregnancyUtility.cs" />
     <Compile Include="Patch_JobDriver_Lovin.cs" />
