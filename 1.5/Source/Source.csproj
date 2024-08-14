@@ -62,15 +62,11 @@
     <Compile Include="Patch_HediffComp_PregnantHuman.cs" />
     <Compile Include="Patch_HumanOvum.cs" />
     <Compile Include="Patch_HumanEmbryo.cs" />
-    <Compile Include="Patch_PawnComponentsUtility.cs" />
     <Compile Include="Patch_ParentRelationUtility.cs" />
     <Compile Include="Patch_PawnGenerator.cs" />
-    <Compile Include="Patch_PawnRelationsTracker.cs" />
-    <Compile Include="Patch_PawnRelationWorker_Sibling.cs" />
     <Compile Include="Patch_PregnancyUtility.cs" />
     <Compile Include="Patch_JobDriver_Lovin.cs" />
     <Compile Include="Patch_StatPart_FertilityByGenderAge.cs" />
-    <Compile Include="Pawn_RelationsTracker.cs" />
     <Compile Include="UniversalPregnancyConstructor.cs" />
     <Compile Include="UniversalPregnancyMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

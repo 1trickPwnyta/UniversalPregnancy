@@ -1,5 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace UniversalPregnancy
@@ -8,26 +10,28 @@ namespace UniversalPregnancy
     [HarmonyPatch("GetParent")]
     public static class Patch_ParentRelationUtility_GetParent
     {
-        public static void Postfix(Pawn pawn, Gender parentGender, ref Pawn __result)
+        public static bool Prefix(Pawn pawn, Gender parentGender, ref Pawn __result)
         {
-            Pawn previousResult = __result;
-            __result = null;
-            if (pawn.relations is Pawn_RelationsTracker)
+            if (!pawn.RaceProps.IsFlesh)
             {
-                Pawn_RelationsTracker relations = (Pawn_RelationsTracker)pawn.relations;
-                if (parentGender == Gender.Female)
-                {
-                    __result = relations.mother;
-                }
-                else if (parentGender == Gender.Male)
-                {
-                    __result = relations.father;
-                }
+                __result = null;
+                return false;
             }
-            if (__result == null)
+            if (pawn.relations == null)
             {
-                __result = previousResult;
+                __result = null;
+                return false;
             }
+            List<Pawn> parents = pawn.relations.DirectRelations.Where(r => r.def == PawnRelationDefOf.Parent).Select(r => r.otherPawn).ToList();
+            if (parentGender == Gender.Male)
+            {
+                __result = parents.MinBy(p => p.thingIDNumber);
+            }
+            else
+            {
+                __result = parents.MaxBy(p => p.thingIDNumber);
+            }
+            return false;
         }
     }
 }
