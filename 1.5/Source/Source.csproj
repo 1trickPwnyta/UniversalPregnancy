@@ -67,6 +67,7 @@
     <Compile Include="Patch_PregnancyUtility.cs" />
     <Compile Include="Patch_JobDriver_Lovin.cs" />
     <Compile Include="Patch_StatPart_FertilityByGenderAge.cs" />
+    <Compile Include="Pawn_RelationsTracker.cs" />
     <Compile Include="UniversalPregnancyConstructor.cs" />
     <Compile Include="UniversalPregnancyMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

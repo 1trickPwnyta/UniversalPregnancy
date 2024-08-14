@@ -22,7 +22,19 @@ namespace UniversalPregnancy
                 __result = null;
                 return false;
             }
+
             List<Pawn> parents = pawn.relations.DirectRelations.Where(r => r.def == PawnRelationDefOf.Parent).Select(r => r.otherPawn).ToList();
+            if (parents.Count == 0)
+            {
+                __result = null;
+                return false;
+            }
+            if (parents.Count == 1)
+            {
+                __result = parentGender == Gender.Male ? parents[0] : null;
+                return false;
+            }
+
             if (parentGender == Gender.Male)
             {
                 __result = parents.MinBy(p => p.thingIDNumber);
