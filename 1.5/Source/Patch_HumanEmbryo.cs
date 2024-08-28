@@ -32,7 +32,7 @@ namespace UniversalPregnancy
     [HarmonyPatch("get_Mother")]
     public static class Patch_HumanEmbryo_get_Mother
     {
-        public static void Postfix(HumanEmbryo __instance, ref Pawn __result)
+        public static void Postfix(RimWorld.HumanEmbryo __instance, ref Pawn __result)
         {
             if (__instance is HumanEmbryo)
             {
@@ -49,7 +49,7 @@ namespace UniversalPregnancy
     [HarmonyPatch("get_Father")]
     public static class Patch_HumanEmbryo_get_Father
     {
-        public static void Postfix(HumanEmbryo __instance, ref Pawn __result)
+        public static void Postfix(RimWorld.HumanEmbryo __instance, ref Pawn __result)
         {
             if (__instance is HumanEmbryo)
             {
@@ -66,7 +66,7 @@ namespace UniversalPregnancy
     [HarmonyPatch(nameof(RimWorld.HumanEmbryo.ExposeData))]
     public static class Patch_HumanEmbryo_ExposeData
     {
-        public static void Prefix(HumanEmbryo __instance)
+        public static void Prefix(RimWorld.HumanEmbryo __instance)
         {
             if (__instance is HumanEmbryo)
             {

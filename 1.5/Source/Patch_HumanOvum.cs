@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Reflection.Emit;
 using Verse;
 
@@ -45,11 +46,19 @@ namespace UniversalPregnancy
     [HarmonyPatch(nameof(HumanOvum.ProduceEmbryo))]
     public static class Patch_HumanOvum_ProduceEmbryo
     {
-        public static void Postfix(HumanOvum __instance, Pawn father, Thing __result)
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            HumanEmbryo embryo = (HumanEmbryo)__result;
-            embryo.mother = __instance.GetComp<CompHasPawnSources>().pawnSources.FirstOrFallback();
-            embryo.father = father;
+            foreach (CodeInstruction instruction in instructions)
+            {
+                if (instruction.opcode == OpCodes.Callvirt && (MethodInfo)instruction.operand == UniversalPregnancyRefs.m_HumanEmbryo_TryPopulateGenes)
+                {
+                    yield return new CodeInstruction(OpCodes.Ldarg_0);
+                    yield return new CodeInstruction(OpCodes.Ldarg_1);
+                    yield return new CodeInstruction(OpCodes.Call, UniversalPregnancyRefs.m_Utility_SetParents);
+                    yield return new CodeInstruction(OpCodes.Ldloc_0);
+                }
+                yield return instruction;
+            }
         }
     }
 }
