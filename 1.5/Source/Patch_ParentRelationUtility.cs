@@ -2,6 +2,7 @@
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using Verse;
 
 namespace UniversalPregnancy
@@ -26,6 +27,49 @@ namespace UniversalPregnancy
                         __result = parents.MaxBy(p => p.thingIDNumber);
                     }
                 }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(ParentRelationUtility))]
+    [HarmonyPatch(nameof(ParentRelationUtility.SetFather))]
+    public static class Patch_ParentRelationUtility_SetFather
+    {
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            foreach (CodeInstruction instruction in instructions)
+            {
+                if (instruction.opcode == OpCodes.Bne_Un_S)
+                {
+                    yield return new CodeInstruction(OpCodes.Pop);
+                    yield return new CodeInstruction(OpCodes.Pop);
+                    instruction.opcode = OpCodes.Br;
+                }
+
+                yield return instruction;
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(ParentRelationUtility))]
+    [HarmonyPatch(nameof(ParentRelationUtility.SetMother))]
+    public static class Patch_ParentRelationUtility_SetMother
+    {
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            bool finished = false;
+
+            foreach (CodeInstruction instruction in instructions)
+            {
+                if (!finished && instruction.opcode == OpCodes.Beq_S)
+                {
+                    yield return new CodeInstruction(OpCodes.Pop);
+                    yield return new CodeInstruction(OpCodes.Pop);
+                    instruction.opcode = OpCodes.Br;
+                    finished = true;
+                }
+
+                yield return instruction;
             }
         }
     }
