@@ -8,6 +8,12 @@
 	</supportedVersions>
 	<description>
 Removes gender requirements from everything related to reproduction, including IVF. Same-sex couples as well as opposite-sex couples can get each other pregnant (though not at the same time), and women can also impregnate men just as easily as the reverse.
+
+=== Updates ===
+01/01/2025: Added compatibility with existing saves, added pregnancy chance tweakvalue
+
+=== Credits ===
+Mod icon: twitter.com/mouse_draws
 	</description>
 	<url>https://github.com/1trickPwnyta/UniversalPregnancy</url>
 	<modDependencies>
