@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using LudeonTK;
 using RimWorld;
 using System.Collections.Generic;
 using System.Reflection;
@@ -8,9 +9,10 @@ namespace UniversalPregnancy
 {
     [HarmonyPatch(typeof(JobDriver_Lovin))]
     [HarmonyPatch("<MakeNewToils>b__12_4")]
-    public static class Patch_JobDriver_Lovin_MakeNewToils
+    public static class Patch_JobDriver_Lovin
     {
-        public static float TestPregnancyChance = 100.0f;
+        [TweakValue("Lovin", 0f, 2000f)]
+        public static float TweakPregnancyChance = 1f;
 
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator il)
         {
@@ -40,14 +42,14 @@ namespace UniversalPregnancy
                     continue;
                 }
 
-#if DEBUG
-                // Replace vanilla base pregnancy chance with test value
+                // Replace vanilla base pregnancy chance with tweakvalue
                 if (instruction.opcode == OpCodes.Ldsfld && (FieldInfo)instruction.operand == UniversalPregnancyRefs.f_JobDriver_Lovin_PregnancyChance)
                 {
-                    Debug.Log("Set base pregnancy chance to test value");
-                    instruction.operand = UniversalPregnancyRefs.f_Patch_JobDriver_Lovin_MakeNewToils_TestPregnancyChance;
+                    yield return instruction;
+                    yield return new CodeInstruction(OpCodes.Ldsfld, UniversalPregnancyRefs.f_Patch_JobDriver_Lovin_MakeNewToils_TweakPregnancyChance);
+                    yield return new CodeInstruction(OpCodes.Mul);
+                    continue;
                 }
-#endif
 
                 // Return the instruction
                 yield return instruction;

@@ -17,7 +17,7 @@ namespace UniversalPregnancy
 
         public static readonly FieldInfo f_JobDriver_pawn = AccessTools.Field(typeof(JobDriver), nameof(JobDriver.pawn));
         public static readonly FieldInfo f_JobDriver_Lovin_PregnancyChance = AccessTools.Field(typeof(JobDriver_Lovin), "PregnancyChance");
-        public static readonly FieldInfo f_Patch_JobDriver_Lovin_MakeNewToils_TestPregnancyChance = AccessTools.Field(typeof(Patch_JobDriver_Lovin_MakeNewToils), nameof(Patch_JobDriver_Lovin_MakeNewToils.TestPregnancyChance));
+        public static readonly FieldInfo f_Patch_JobDriver_Lovin_MakeNewToils_TweakPregnancyChance = AccessTools.Field(typeof(Patch_JobDriver_Lovin), nameof(Patch_JobDriver_Lovin.TweakPregnancyChance));
         public static readonly FieldInfo f_Pawn_relations = AccessTools.Field(typeof(Pawn), nameof(Pawn.relations));
         public static readonly FieldInfo f_Pawn_gender = AccessTools.Field(typeof(Pawn), nameof(Pawn.gender));
     }
