@@ -34,10 +34,6 @@ namespace UniversalPregnancy
                 }
             }
             __result = curve.Evaluate(pawn.ageTracker.AgeBiologicalYearsFloat);
-
-#if DEBUG
-            __result = 1f;
-#endif
         }
     }
 }
