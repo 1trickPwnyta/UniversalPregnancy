@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RitualOutcomeEffectDef[defName="ChildBirth"]/description</xpath>
+    <value>
+	  <description>All quality factors determine how healthy the parent and baby are going to be.</description>
+	</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RitualOutcomeEffectDef[defName="ChildBirth"]/extraOutcomeDescriptions/li[qualityToValue="PregnancyUtility.ChanceMomDiesDuringBirth"]/description</xpath>
+    <value>
+	  <description>Additionally, the parent will have a {0_percentage} chance to die during birth.</description>
+	</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RitualOutcomeEffectDef[defName="ChildBirth"]/comps/li[@Class="RitualOutcomeComp_PawnAge"]/labelAbstract</xpath>
+    <value>
+	  <labelAbstract>parent's age</labelAbstract>
+	</value>
+  </Operation>
+</Patch>

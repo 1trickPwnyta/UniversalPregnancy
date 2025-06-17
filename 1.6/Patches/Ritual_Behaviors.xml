@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/RitualBehaviorDef[defName="ChildBirth"]/roles/li[id="mother"]/label</xpath>
+    <value>
+	  <label>parent</label>
+	</value>
+  </Operation>
+</Patch>

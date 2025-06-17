@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<Difficulty_BabiesAreHealthy_Info>Human babies are always born healthy. Parents can't die in childbirth or have miscarriages.</Difficulty_BabiesAreHealthy_Info>
+	<FatherTip>Genetic parent</FatherTip>
+	<MotherTip>Genetic parent</MotherTip>
+	<ChildBirthAlwaysHealthy_Desc>Gather to help a parent give birth. A doctor can help deliver the baby.</ChildBirthAlwaysHealthy_Desc>
+	<FertilizeGizmoDescription>Choose a person to fertilize this ovum to create an embryo. The embryo can then be implanted in a parent to start a pregnancy, or in a growth vat. The biological parents of the resulting child will be the person who provided the ovum and person who fertilized it.</FertilizeGizmoDescription>
+	<ImplantDescription>Implant this embryo in a surrogate parent to begin a pregnancy.</ImplantDescription>
+	<ImplantDisabledNoWomen>No person can be a surrogate parent.</ImplantDisabledNoWomen>
+	<ImplantSurgeryConfirm>The implantation success chance for the {0} in {1} is {2}.\n\nThe implantation success chance is dependent on the fertility of the surrogate parent. It will be lower if the parent is too old or too young.</ImplantSurgeryConfirm>
+	<Mother>parent</Mother>
+	<Father>parent</Father>
+	
+	<UniversalPregnancy_CannotFertilizeOwnOvum>cannot fertilize own ovum</UniversalPregnancy_CannotFertilizeOwnOvum>
+	<UniversalPregnancy_FemaleFertilitySetting>Female fertility age factor</UniversalPregnancy_FemaleFertilitySetting>
+	<UniversalPregnancy_MaleFertilitySetting>Male fertility age factor</UniversalPregnancy_MaleFertilitySetting>
+	<UniversalPregnancy_FemaleFertility>Use vanilla female age factor</UniversalPregnancy_FemaleFertility>
+	<UniversalPregnancy_MaleFertility>Use vanilla male age factor</UniversalPregnancy_MaleFertility>
+</LanguageData>

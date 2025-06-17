@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/PawnRelationDef[defName="ParentBirth"]</xpath>
+    <value>
+	  <diedThoughtFemale>MyBirthMotherDied</diedThoughtFemale>
+	</value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/PawnRelationDef[defName="ParentBirth"]</xpath>
+    <value>
+	  <killedThoughtFemale>KilledMyBirthMother</killedThoughtFemale>
+	</value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/PawnRelationDef[defName="ParentBirth"]</xpath>
+    <value>
+	  <lostThoughtFemale>MyBirthMotherLost</lostThoughtFemale>
+	</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/PawnRelationDef[defName="ParentBirth"]/diedThought</xpath>
+    <value>
+	  <diedThought>MyBirthFatherDied</diedThought>
+	</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/PawnRelationDef[defName="ParentBirth"]/killedThought</xpath>
+    <value>
+	  <killedThought>KilledMyBirthFather</killedThought>
+	</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/PawnRelationDef[defName="ParentBirth"]/lostThought</xpath>
+    <value>
+	  <lostThought>MyBirthFatherLost</lostThought>
+	</value>
+  </Operation>
+</Patch>
