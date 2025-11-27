@@ -3,22 +3,28 @@
 	<name>Universal Pregnancy</name>
 	<author>1trickPwnyta</author>
 	<packageId>universalpregnancy.1trickPwnyta</packageId>
-	<modVersion>1.0.2</modVersion>
+	<modVersion>1.0.3</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
 		<li>1.6</li>
 	</supportedVersions>
-	<description>
+	<description><![CDATA[<size=18px><color=#5aa9d6>Description</color></size>
 Removes gender requirements from everything related to reproduction, including IVF. Same-sex couples as well as opposite-sex couples can get each other pregnant (though not at the same time), and women can also impregnate men just as easily as the reverse.
 
-=== Updates ===
+<size=18px><color=#5aa9d6>Compatibility</color></size>
+This mod is not compatible with the Intimacy mod.
+
+________________________________________________
+
+<size=18px><color=#5aa9d6>Updates</color></size>
+11/27/2025: Fix bug with embryos forgetting one of their parents when reloading
 06/17/2025: Update to 1.6, fix parent relation label in baby feeding tab
 01/07/2025: Fixed bug that gave 100% fertility at all ages
 01/01/2025: Added compatibility with existing saves, added pregnancy chance tweakvalue
 
-=== Credits ===
-Mod icon: twitter.com/mouse_draws
-	</description>
+<size=18px><color=#5aa9d6>Credits</color></size>
+  &#8226; Mod icon: twitter.com/mouse_draws
+	]]></description>
 	<url>https://github.com/1trickPwnyta/UniversalPregnancy</url>
 	<modDependencies>
 		<li>
