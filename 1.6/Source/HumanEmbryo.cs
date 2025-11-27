@@ -9,8 +9,8 @@ namespace UniversalPregnancy
 
         public new void ExposeData()
         {
-            Scribe_References.Look<Pawn>(ref mother, "mother");
-            Scribe_References.Look<Pawn>(ref father, "father");
+            Scribe_References.Look(ref mother, "mother");
+            Scribe_References.Look(ref father, "father");
         }
     }
 }

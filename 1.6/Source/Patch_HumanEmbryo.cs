@@ -66,11 +66,10 @@ namespace UniversalPregnancy
     [HarmonyPatch(nameof(RimWorld.HumanEmbryo.ExposeData))]
     public static class Patch_HumanEmbryo_ExposeData
     {
-        public static void Prefix(RimWorld.HumanEmbryo __instance)
+        public static void Postfix(RimWorld.HumanEmbryo __instance)
         {
-            if (__instance is HumanEmbryo)
+            if (__instance is HumanEmbryo embryo)
             {
-                HumanEmbryo embryo = (HumanEmbryo)__instance;
                 embryo.ExposeData();
             }
         }
